@@ -5,6 +5,31 @@ var colors = generateRandomColors(numsq);
   var message = document.querySelector("#message");
   var pickedColor=randomIndex();
   var h1=document.querySelector("h1");
+  var easybtn=document.querySelector("#easybtn");
+  var hardbtn=document.querySelector("#hardbtn");
+
+   nit();
+
+
+
+   function nit(){
+         this.textContent="New Game";
+      colors = generateRandomColors(numsq);
+      hardbtn.classList.add("selected");
+      pickedColor=randomIndex();
+      rgbDisp.textContent=pickedColor;
+      h1.style.backgroundColor="steelblue";
+      message.textContent=" ";
+
+      for(var i=0;i<squares.length;i++)
+      	 {
+      	 	 squares[i].style.backgroundColor=colors[i];
+      	 }
+
+   } 
+
+
+
 
    rgbDisp.textContent=pickedColor;
 for(var i = 0;i<squares.length;i++)
@@ -77,14 +102,13 @@ for(var i = 0;i<squares.length;i++)
  });
 
  
-  var easybtn=document.querySelector("#easybtn");
-  var hardbtn=document.querySelector("#hardbtn");
+  
 
   easybtn.addEventListener("click",function(){
-      hardbtn.classList.remove("selected");
-      easybtn.classList.add("selected");
-      h1.style.backgroundColor="steelblue";
-  
+       hardbtn.classList.remove("selected");
+       easybtn.classList.add("selected");
+       h1.style.backgroundColor="steelblue";
+   
       numsq=3;
       colors = generateRandomColors(numsq);
       pickedColor=randomIndex();
@@ -116,24 +140,3 @@ for(var i = 0;i<squares.length;i++)
       }
 
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
