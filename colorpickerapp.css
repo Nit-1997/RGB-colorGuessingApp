@@ -33,7 +33,6 @@ h1{
 #stripe{
 	height:30px;
 	text-align: center;
-	color: black;
 	background-color: white;
 }
 
@@ -56,30 +55,16 @@ button{
 	letter-spacing: 1px;
 	font-size: inherit;
 	transition:all 0.3s;
-	outline:none;
+	outline: none;
 }
 
 #message{
 	display:inline-block;
 	width:20%;
+	font-weight: 400;
 }
 
 button:hover{
 	color:white;
 	background: steelblue;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
