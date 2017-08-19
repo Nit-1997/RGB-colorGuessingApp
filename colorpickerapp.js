@@ -121,6 +121,7 @@ for(var i = 0;i<squares.length;i++)
       pickedColor=randomIndex();
       rgbDisp.textContent=pickedColor;
       message.textContent=" ";
+      clicks=0;
 
       for(var i=0;i<squares.length;i++){
       	if(colors[i]){
@@ -142,7 +143,7 @@ for(var i = 0;i<squares.length;i++)
       pickedColor=randomIndex();
       rgbDisp.textContent=pickedColor;
       message.textContent=" ";
-     
+      clicks=0;
         for(var i=0;i<squares.length;i++){
            squares[i].style.backgroundColor=colors[i];
            squares[i].style.display="block";
