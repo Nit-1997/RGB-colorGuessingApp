@@ -7,6 +7,7 @@ var colors = generateRandomColors(numsq);
   var h1=document.querySelector("h1");
   var easybtn=document.querySelector("#easybtn");
   var hardbtn=document.querySelector("#hardbtn");
+  var clicks=0;
 
    nit();
 
@@ -37,16 +38,22 @@ for(var i = 0;i<squares.length;i++)
       squares[i].style.backgroundColor=colors[i];
       squares[i].addEventListener("click", function(){
               var clickedColor=this.style.backgroundColor; 
-                if(clickedColor===pickedColor)
+                if(clickedColor===pickedColor&&clicks<3)
                 	 {
                 	 	changeColors(clickedColor);
                 	 	message.textContent="Well Played";
                 	 	h1.style.backgroundColor=pickedColor;
                 	 	reset.textContent="Play Again ";
+                	 	clicks++;
                 	 }
-                else{
+                else if(clickedColor!=pickedColor&&clicks<3){
                    this.style.backgroundColor= "#232323";
-                   message.textContent="Try Again";
+                  if(clicks===2) 
+                     message.textContent="Game Over";
+                  else
+                  	 message.textContent="Try Again";
+
+                   clicks++;
                 } 
      }); 
 
@@ -94,11 +101,11 @@ for(var i = 0;i<squares.length;i++)
       rgbDisp.textContent=pickedColor;
       h1.style.backgroundColor="steelblue";
       message.textContent=" ";
-
       for(var i=0;i<squares.length;i++)
       	 {
       	 	 squares[i].style.backgroundColor=colors[i];
       	 }
+      	 clicks=0;
  });
 
  
@@ -113,6 +120,7 @@ for(var i = 0;i<squares.length;i++)
       colors = generateRandomColors(numsq);
       pickedColor=randomIndex();
       rgbDisp.textContent=pickedColor;
+      message.textContent=" ";
 
       for(var i=0;i<squares.length;i++){
       	if(colors[i]){
@@ -133,10 +141,32 @@ for(var i = 0;i<squares.length;i++)
       colors = generateRandomColors(numsq);
       pickedColor=randomIndex();
       rgbDisp.textContent=pickedColor;
-
+      message.textContent=" ";
+     
         for(var i=0;i<squares.length;i++){
            squares[i].style.backgroundColor=colors[i];
            squares[i].style.display="block";
       }
 
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
